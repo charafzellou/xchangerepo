@@ -2,17 +2,13 @@
   "name": "xchangerepo",
   "version": "0.0.1",
   "description": "XchangeRepo is an API collector for crypto!",
-  "main": "index.html",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "author": "Charaf ZELLOU",
-    "license": "ISC",
-    "dependencies": {
-      "cheerio": "^1.0.0-rc.3",
-      "mongoose": "^5.7.13",
-      "express": "^4.16.3",
-      "request": "^2.88.0"
-    }
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Charaf ZELLOU",
+  "license": "ISC",
+  "dependencies": {
+    "request": "2.88.0"
   }
 }
