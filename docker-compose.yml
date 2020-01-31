@@ -1,23 +1,27 @@
-version: '3'
+version: '2'
 services:
-  node:
+  web:
     image: 'node:10-alpine'
     depends_on:
       - 'mongo'
-    volumes:
-      - './:/home/node/app'
-    working_dir: '/home/node/app'
     ports:
-      - '127.0.0.1:3000:3000'
-    command: 'npm install && npm start'
-
-  mongo:
+      - '3000:3000'
+      - '8080:8080'
+    volumes:
+      - './:/home/node/app/'
+      - './API:/home/node/app/API'
+      - './WEB:/home/node/app/WEB'
+    working_dir: '/home/node/app'
+    command:
+      - 'npm install'
+      - 'npm start'
+  database:
     image: 'mongo'
     ports:
-      - '127.0.0.1:27017:27017'
+      - '27017:27017'
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: password
     volumes:
-      - ./SampleCollections:/usr/local/SampleCollections
+      - './BDD:/usr/local/BDD'
     working_dir: '/usr/local/SampleCollections'
