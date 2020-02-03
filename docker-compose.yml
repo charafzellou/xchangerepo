@@ -1,23 +1,43 @@
 version: '3'
 services:
-  node:
-    image: 'node:10-alpine'
-    depends_on:
-      - 'mongo'
-    volumes:
-      - './:/home/node/app'
-    working_dir: '/home/node/app'
-    ports:
-      - '127.0.0.1:3000:3000'
-    command: 'cd server && npm install && npm start'
-
-  mongo:
-    image: 'mongo'
-    ports:
-      - '127.0.0.1:27017:27017'
+  db:
+    image: mongo
+    restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: password
+  mongo-express:
+    image: mongo-express
+    restart: always
+    depends_on:
+      - 'db'
+    ports:
+      - '127.0.0.1:8081:8081'
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: password
+  api:
+    image: 'node:10-alpine'
+    restart: 600
+    depends_on:
+      - 'db'
     volumes:
-      - ./SampleCollections:/usr/local/SampleCollections
-    working_dir: '/usr/local/SampleCollections'
+      - './api:/home/node/app'
+    working_dir: '/home/node/app'
+    ports:
+      - '127.0.0.1:1234:1234'
+    command:
+      - 'npm install'
+      - 'npx nodemon ./api_request.js'
+  web:
+    image: 'node:10-alpine'
+    depends_on:
+      - 'db'
+    volumes:
+      - './client:/home/node/app'
+    working_dir: '/home/node/app'
+    ports:
+      - '127.0.0.1:8080:8080'
+    command:
+      - 'npm install'
+      - 'npm start'

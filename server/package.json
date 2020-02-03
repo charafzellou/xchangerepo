@@ -4,9 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "./node_modules/.bin/nodemon -L app.js"
+    "start": "npx nodemon -L app.js"
   },
-  "author": "",
+  "author": "Charaf ZELLOU",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",

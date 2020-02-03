@@ -2,7 +2,6 @@ const http = require('http');
 const https = require('https');
 const Post = require('./models/Post');
 
-
 const url = "https://9gag.com/v1/group-posts/group/default/type/trending";
 const config = {method: "GET", headers: {accept: "application/json"}};
 

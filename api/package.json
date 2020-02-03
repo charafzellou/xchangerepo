@@ -1,16 +1,17 @@
 {
-  "name": "cours-nodejs",
+  "name": "api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "api_request.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Charaf ZELLOU",
   "license": "ISC",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.3",
-    "create-react-app": "^3.3.1",
-    "mongoose": "^5.7.13"
+    "fs": "0.0.1-security",
+    "mongoose": "^5.8.11",
+    "nodemon": "^2.0.2",
+    "request": "^2.88.0"
   }
 }
