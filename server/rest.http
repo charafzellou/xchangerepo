@@ -1,0 +1,9 @@
+POST http:/localhost:3000/movies
+Content-Type: application/json
+
+{
+  "title": "Bad Boys 3"
+}
+
+###
+GET http://localhost:3000/movies

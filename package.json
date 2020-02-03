@@ -1,0 +1,16 @@
+{
+  "name": "cours-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Charaf ZELLOU",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "create-react-app": "^3.3.1",
+    "mongoose": "^5.7.13"
+  }
+}
