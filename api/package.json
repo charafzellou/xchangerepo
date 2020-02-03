@@ -9,7 +9,6 @@
   "author": "Charaf ZELLOU",
   "license": "ISC",
   "dependencies": {
-    "fs": "0.0.1-security",
     "mongoose": "^5.8.11",
     "nodemon": "^2.0.2",
     "request": "^2.88.0"
