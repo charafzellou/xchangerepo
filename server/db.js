@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://mongo', {
+mongoose.connect('mongodb://mongodb', {
 	user: "root",
 	pass: "password",
 	dbName: "moviesdb",

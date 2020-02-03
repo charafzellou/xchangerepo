@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const mongoHost = 'mongodb://127.0.0.1:27017/';
+const mongoHost = 'mongodb://mongodb:27017/';
 
 mongoose.connect(mongoHost, {
 	user: "root",
