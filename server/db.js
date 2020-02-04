@@ -1,10 +1,17 @@
 const mongoose = require('mongoose');
+const mongoHost = 'mongodb://mongodb:27017/';
 
-mongoose.connect('mongodb://mongodb', {
+mongoose.connect(mongoHost, {
 	user: "root",
 	pass: "password",
-	dbName: "moviesdb",
+	dbName: "xchangerepo",
 	useNewUrlParser: true
-}).catch(e => console.log(e));
+});
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'Connection error:'));
+db.once('open', function() {
+  console.log('Connection to MongoDB successful!');
+});
 
 module.exports = mongoose.connection;

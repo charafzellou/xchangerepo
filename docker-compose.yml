@@ -49,7 +49,7 @@ services:
       - './server:/usr/src/app'
     working_dir: '/usr/src/app'
     ports:
-      - '8080:8080'
+      - '3000:3000'
     command: "npm start"
   webreact:
     image: 'node:10-alpine'

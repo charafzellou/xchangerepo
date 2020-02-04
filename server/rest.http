@@ -1,9 +1,17 @@
-POST http:/localhost:3000/movies
+POST http://localhost:3000/tickers
 Content-Type: application/json
 
 {
-  "title": "Bad Boys 3"
+  "coin_id": "BTC",
+  "coin_name": "Bitcoin",
+  "currency": "EUR",
+  "currency_name": "Euro",
+  "time_stamp": "0000000011",
+  "last_price": "8247.90295231",
+  "price_24hr_pcnt": "-2.42",
+  "volume_24hr": "5003186901",
+  "vol_24hr_pcnt": "11.92"
 }
 
 ###
-GET http://localhost:3000/movies
+GET http://localhost:3000/tickers

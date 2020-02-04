@@ -13,5 +13,5 @@ const CoinTickerSchema = mongoose.Schema({
         vol_24hr_pcnt: String
 });
 
-const CoinTicker = db.model('CoinTicker', CoinTickerSchema);
-module.exports = CoinTicker; 
+const CoinTickerModel = db.model('CoinTicker', CoinTickerSchema);
+module.exports = CoinTickerModel; 
