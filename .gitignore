@@ -390,6 +390,9 @@ buck-out/
 npm-debug.log
 yarn-error.log
 
+# MongoDB
+db/data/
+
 ### Xcode ###
 # Xcode
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore

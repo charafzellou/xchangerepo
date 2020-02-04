@@ -39,12 +39,12 @@ function RapidAPIdefine(result) {
 function RapidAPIsave(newEntry) {
   newEntry.save(function (err, newEntry) {
     if (err) return console.error(err);
-    newEntry.speak();
+    console.log(newEntry);
   });
 }
 
 request(RapidAPIconfig, function (error, response, body) {
 	if (error) throw new Error(error);
   const result = JSON.parse(body);
-  RapidAPIsave(RapidAPIdefine(RapidAPIrefine(result)));  
+  RapidAPIsave(RapidAPIdefine(RapidAPIrefine(result)));
 });

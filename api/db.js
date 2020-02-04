@@ -9,7 +9,7 @@ mongoose.connect(mongoHost, {
 });
 
 var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
+db.on('error', console.error.bind(console, 'Connection error:'));
 db.once('open', function() {
   console.log('Connection to MongoDB successful!');
 });

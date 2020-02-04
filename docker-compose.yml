@@ -12,7 +12,7 @@ services:
       MONGO_DATA_DIR: '/data/db'
     volumes:
       - ./db/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
-      - ./db/data/:/data/db/
+#      - ./db/data/:/data/db/
   mongo-express:
     image: mongo-express
     container_name: "mongoexpress"
@@ -35,23 +35,30 @@ services:
     depends_on:
       - 'database'
     volumes:
-      - './api:/home/node/app'
-    working_dir: '/home/node/app'
+      - './api:/usr/src/app'
+    working_dir: '/usr/src/app'
     ports:
       - '1234:1234'
-    command:
-      - 'npm install && npx nodemon ./api_request.js'
+    command: "npm start"
+  apireact:
+    image: 'node:10-alpine'
+    container_name: "apireact"
+    depends_on:
+      - 'database'
+    volumes:
+      - './server:/usr/src/app'
+    working_dir: '/usr/src/app'
+    ports:
+      - '8080:8080'
+    command: "npm start"
   webreact:
     image: 'node:10-alpine'
     container_name: "webreact"
     depends_on:
-      - 'database'
+      - 'apireact'
     volumes:
-      - './client:/home/node/app/client'
-      - './server:/home/node/app/server'
-    working_dir: '/home/node/app'
+      - './client:/usr/src/app'
+    working_dir: '/usr/src/app'
     ports:
-      - '8080:8080'
-    command:
-      - 'cd client && npm install && npm start'
-      - 'cd ../server && npm install && npm start'
+      - '8686:8686'
+    command: "npm start"

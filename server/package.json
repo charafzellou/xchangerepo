@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "npx nodemon -L app.js"
+    "start": "npx nodemon -L ./app.js"
   },
   "author": "Charaf ZELLOU",
   "license": "ISC",

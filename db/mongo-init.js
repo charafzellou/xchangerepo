@@ -4,7 +4,7 @@ db.createUser(
         pwd: "password",
         roles: [
             {
-                role: "readWrite",
+                role: "dbOwner",
                 db: "xchangerepo"
             }
         ]
